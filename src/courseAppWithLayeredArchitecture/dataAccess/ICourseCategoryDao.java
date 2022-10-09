@@ -3,6 +3,8 @@ package courseAppWithLayeredArchitecture.dataAccess;
 import courseAppWithLayeredArchitecture.entities.CourseCategory;
 
 public interface ICourseCategoryDao {
+  public void getAll();
+
   public void add(CourseCategory courseCategory);
 
   public boolean isExists(String name);
