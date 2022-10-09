@@ -4,6 +4,10 @@ public class CourseCategory {
 
   private String name;
 
+  public CourseCategory(String name) {
+    this.name = name;
+  }
+
   public String getName() {
     return name;
   }
