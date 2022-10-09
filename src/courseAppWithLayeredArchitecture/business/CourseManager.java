@@ -12,9 +12,16 @@ public class CourseManager {
   }
 
   public void create(Course course) {
-    if (!courseDao.isExists(course.getName()) && course.getPrice() > 0) {
-      courseDao.add(course);
+    if (courseDao.isExists(course.getName())) {
+      System.out.println("Bu kurs zaten eklenmiş");
+      return;
     }
+    if (!(course.getPrice() > 0)) {
+      System.out.println("Kursun fiyatı 0'dan büyük olmalıdır");
+      return;
+    }
+
+    courseDao.add(course);
   }
 
   public void remove(Course course) {

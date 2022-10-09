@@ -12,9 +12,12 @@ public class CourseCategoryManager {
   }
 
   public void create(CourseCategory courseCategory) {
-    if (!courseCategoryDao.isExists(courseCategory.getName())) {
-      courseCategoryDao.add(courseCategory);
+    if (courseCategoryDao.isExists(courseCategory.getName())) {
+      System.out.println("Bu kategori zaten eklenmiş");
+      return;
     }
+
+    courseCategoryDao.add(courseCategory);
   }
 
   public void remove(CourseCategory courseCategory) {
