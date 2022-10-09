@@ -10,5 +10,5 @@ public class VirtualDatabase {
 
   public static List<Course> courses = new ArrayList<Course>();
   public static List<CourseCategory> courseCategories = new ArrayList<CourseCategory>();
-  public static List<Instructor> instructor = new ArrayList<Instructor>();
+  public static List<Instructor> instructors = new ArrayList<Instructor>();
 }
