@@ -7,5 +7,5 @@ public interface ICourseDao {
 
   public boolean isExists(String string);
 
-  public void remove(Course course);
+  public void remove(Course courseToRemove);
 }
