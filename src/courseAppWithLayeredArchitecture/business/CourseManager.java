@@ -24,6 +24,10 @@ public class CourseManager {
     courseDao.add(course);
   }
 
+  public void getAll() {
+    courseDao.getAll();
+  }
+
   public void remove(Course course) {
     if (courseDao.isExists(course.getName())) {
       courseDao.remove(course);

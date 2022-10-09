@@ -20,6 +20,10 @@ public class CourseCategoryManager {
     courseCategoryDao.add(courseCategory);
   }
 
+  public void getAll() {
+    courseCategoryDao.getAll();
+  }
+
   public void remove(CourseCategory courseCategory) {
     if (courseCategoryDao.isExists(courseCategory.getName())) {
       courseCategoryDao.remove(courseCategory);

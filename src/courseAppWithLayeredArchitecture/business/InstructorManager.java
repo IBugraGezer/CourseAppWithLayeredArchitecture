@@ -15,6 +15,10 @@ public class InstructorManager {
     instructorDao.add(instructor);
   }
 
+  public void getAll() {
+    instructorDao.getAll();
+  }
+
   public void remove(Instructor instructor) {
     if (instructorDao.isExists(instructor.getName())) {
       instructorDao.remove(instructor);
