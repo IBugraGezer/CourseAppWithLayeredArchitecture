@@ -25,9 +25,10 @@ public class JdbcCourseDao implements ICourseDao {
     for (Course course : VirtualDatabase.courses) {
       if (course.getName() == courseToRemove.getName()) {
         VirtualDatabase.courses.remove(index);
+        System.out.println(course.getName() + " jdbc ile silindi");
+        return;
       }
       index++;
     }
-    System.out.println("jdbc ile silindi");
   }
 }

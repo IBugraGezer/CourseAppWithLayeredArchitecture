@@ -25,9 +25,10 @@ public class JdbcCourseCategoryDao implements ICourseCategoryDao {
     for (CourseCategory courseCategory : VirtualDatabase.courseCategories) {
       if (courseCategory.getName() == courseCategoryToDelete.getName()) {
         VirtualDatabase.courseCategories.remove(index);
+        System.out.println(courseCategory.getName() + " jdbc ile silindi");
+        return;
       }
       index++;
     }
-    System.out.println("jdbc ile silindi");
   }
 }

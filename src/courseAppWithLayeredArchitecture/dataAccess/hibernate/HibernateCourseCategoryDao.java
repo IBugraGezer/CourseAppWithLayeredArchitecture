@@ -25,9 +25,10 @@ public class HibernateCourseCategoryDao implements ICourseCategoryDao {
     for (CourseCategory courseCategory : VirtualDatabase.courseCategories) {
       if (courseCategory.getName() == courseCategoryToDelete.getName()) {
         VirtualDatabase.courseCategories.remove(index);
+        System.out.println(courseCategory.getName() + " hibernate ile silindi");
+        return;
       }
       index++;
     }
-    System.out.println("hibernate ile silindi");
   }
 }

@@ -24,10 +24,10 @@ public class HibernateCourseDao implements ICourseDao {
     int index = 0;
     for (Course course : VirtualDatabase.courses) {
       if (course.getName() == courseToRemove.getName()) {
-        VirtualDatabase.courses.remove(index);
+        System.out.println(course.getName() + " hibernate ile silindi");
+        return;
       }
       index++;
     }
-    System.out.println("hibernate ile silindi");
   }
 }

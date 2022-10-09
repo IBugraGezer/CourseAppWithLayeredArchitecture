@@ -26,9 +26,11 @@ public class HibernateInstructorDao implements IInstructorDao {
     for (Instructor instructor : VirtualDatabase.instructors) {
       if (instructor.getName() == instructorToRemove.getName()) {
         VirtualDatabase.instructors.remove(index);
+    	System.out.println(instructor.getName() + " hibernate ile silindi");
+        return;
       }
       index++;
     }
-    System.out.println("hibernate ile silindi");
+    
   }
 }
