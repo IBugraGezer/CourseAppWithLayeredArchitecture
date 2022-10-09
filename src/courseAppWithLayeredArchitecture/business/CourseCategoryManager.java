@@ -3,7 +3,7 @@ package courseAppWithLayeredArchitecture.business;
 import courseAppWithLayeredArchitecture.dataAccess.ICourseCategoryDao;
 import courseAppWithLayeredArchitecture.entities.CourseCategory;
 
-public class CourseCategoryManager {
+public class CourseCategoryManager extends AbstractManager {
 
   private ICourseCategoryDao courseCategoryDao;
 
@@ -18,15 +18,18 @@ public class CourseCategoryManager {
     }
 
     courseCategoryDao.add(courseCategory);
+    this.log("kategori eklendi");
   }
 
   public void getAll() {
     courseCategoryDao.getAll();
+    this.log("kategoriler listelendi");
   }
 
   public void remove(CourseCategory courseCategory) {
     if (courseCategoryDao.isExists(courseCategory.getName())) {
       courseCategoryDao.remove(courseCategory);
+      this.log("kategori silindi");
     }
   }
 }

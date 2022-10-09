@@ -3,7 +3,7 @@ package courseAppWithLayeredArchitecture.business;
 import courseAppWithLayeredArchitecture.dataAccess.ICourseDao;
 import courseAppWithLayeredArchitecture.entities.Course;
 
-public class CourseManager {
+public class CourseManager extends AbstractManager {
 
   private ICourseDao courseDao;
 
@@ -22,15 +22,18 @@ public class CourseManager {
     }
 
     courseDao.add(course);
+    this.log("kurs eklendi");
   }
 
   public void getAll() {
     courseDao.getAll();
+    this.log("kurslar listelendi");
   }
 
   public void remove(Course course) {
     if (courseDao.isExists(course.getName())) {
       courseDao.remove(course);
+      this.log("kurs silindi");
     }
   }
 }
