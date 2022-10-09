@@ -6,6 +6,16 @@ import courseAppWithLayeredArchitecture.virtualDatabase.VirtualDatabase;
 
 public class JdbcInstructorDao implements IInstructorDao {
 
+  public void getAll() {
+    System.out.println("-------eğitmenler jdbc ile listeleniyor--------");
+    for (Instructor instructor : VirtualDatabase.instructors) {
+      System.out.println(instructor.getName());
+      System.out.println(instructor.getDescriptionText());
+      System.out.println(instructor.getProfilePhotoPath());
+      System.out.println("--------------");
+    }
+  }
+
   public void add(Instructor instructor) {
     VirtualDatabase.instructors.add(instructor);
     System.out.println(instructor.getName() + " jdbc ile eklendi");

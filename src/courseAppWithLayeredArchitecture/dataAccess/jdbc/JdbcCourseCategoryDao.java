@@ -6,6 +6,14 @@ import courseAppWithLayeredArchitecture.virtualDatabase.VirtualDatabase;
 
 public class JdbcCourseCategoryDao implements ICourseCategoryDao {
 
+  public void getAll() {
+    System.out.println("----Kategoriler jdbc ile listeleniyor----");
+    for (CourseCategory courseCategory : VirtualDatabase.courseCategories) {
+      System.out.println(courseCategory.getName());
+      System.out.println("--------------");
+    }
+  }
+
   public void add(CourseCategory courseCategory) {
     VirtualDatabase.courseCategories.add(courseCategory);
     System.out.println(courseCategory.getName() + " jdbc ile eklendi");
