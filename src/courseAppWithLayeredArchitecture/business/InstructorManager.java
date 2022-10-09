@@ -5,7 +5,7 @@ import courseAppWithLayeredArchitecture.entities.Instructor;
 
 public class InstructorManager {
 
-  public IInstructorDao instructorDao;
+  private IInstructorDao instructorDao;
 
   public InstructorManager(IInstructorDao instructorDao) {
     this.instructorDao = instructorDao;
